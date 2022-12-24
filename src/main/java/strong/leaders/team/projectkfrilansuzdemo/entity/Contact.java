@@ -16,9 +16,9 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", unique = true)
     private String phone;
 
-    @Column(name = "email_address")
+    @Column(name = "email_address", unique = true)
     private String email;
 }

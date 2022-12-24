@@ -1,8 +1,6 @@
 package strong.leaders.team.projectkfrilansuzdemo.rest.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import strong.leaders.team.projectkfrilansuzdemo.entity.Course;
 
 import java.util.Date;
@@ -10,8 +8,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Getter
+@Setter
 public class ActiveCourseDto {
-    private Course cource;
+    private Course course;
     private Integer maxStudent;
     private Integer currentStudentsCount;
     private Date startDate;

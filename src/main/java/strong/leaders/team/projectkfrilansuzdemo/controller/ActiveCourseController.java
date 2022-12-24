@@ -6,7 +6,7 @@ import strong.leaders.team.projectkfrilansuzdemo.rest.response.SingleResponse;
 import strong.leaders.team.projectkfrilansuzdemo.service.ActiveCourseService;
 
 @RestController
-@RequestMapping(path = "api/v1/active_courses/")
+@RequestMapping(path = "api/v1/active_courses")
 public class ActiveCourseController {
 
     private final ActiveCourseService activeCourseService;
@@ -18,35 +18,30 @@ public class ActiveCourseController {
     // CREATE
     @PostMapping(path = "/save")
     public SingleResponse save(@RequestBody ActiveCourseDto activeCourseDTO){
-        SingleResponse save = activeCourseService.save(activeCourseDTO);
-        return save;
+        return activeCourseService.save(activeCourseDTO);
     }
 
     // READ
     @GetMapping(path = "/list")
     public SingleResponse findAll(){
-        SingleResponse activeCourses = activeCourseService.findAll();
-        return activeCourses;
+        return activeCourseService.findAll();
     }
 
     // READ BY ID
     @GetMapping("/{id}/byId")
     public SingleResponse findById(@PathVariable Long id){
-        SingleResponse activeCourse = activeCourseService.findById(id);
-        return activeCourse;
+        return activeCourseService.findById(id);
     }
 
     // UPDATE
     @PutMapping("/update/{id}")
     public SingleResponse update(@RequestBody ActiveCourseDto activeCourseDTO, @PathVariable Long id){
-        SingleResponse update = activeCourseService.update(activeCourseDTO, id);
-        return update;
+        return activeCourseService.update(activeCourseDTO, id);
     }
 
     // DELETE
     @DeleteMapping("/delete/{id}")
     public SingleResponse delete(@PathVariable Long id){
-        SingleResponse delete = activeCourseService.delete(id);
-        return delete;
+        return activeCourseService.delete(id);
     }
 }

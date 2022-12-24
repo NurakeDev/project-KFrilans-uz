@@ -1,7 +1,5 @@
 package strong.leaders.team.projectkfrilansuzdemo.rest.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

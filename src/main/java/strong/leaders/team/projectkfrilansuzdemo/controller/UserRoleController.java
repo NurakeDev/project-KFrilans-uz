@@ -6,7 +6,7 @@ import strong.leaders.team.projectkfrilansuzdemo.rest.response.SingleResponse;
 import strong.leaders.team.projectkfrilansuzdemo.service.RoleService;
 
 @RestController
-@RequestMapping(path = "/api/v1/users/roles/")
+@RequestMapping(path = "/api/v1/users/roles")
 public class UserRoleController {
 
     private final RoleService service;

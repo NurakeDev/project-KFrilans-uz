@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -18,6 +20,9 @@ public class Course {
 
         @Column(name = "course_name")
         private String name;
+
+        @OneToMany
+        private List<Topic> topics;
 
         @Column(name = "course_description")
         private String description;

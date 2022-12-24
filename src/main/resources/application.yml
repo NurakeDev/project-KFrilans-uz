@@ -1,8 +1,10 @@
 spring:
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update
   datasource:
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: 12345
-
+    url: jdbc:postgresql://localhost:5432/kfreelance_db

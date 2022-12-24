@@ -18,7 +18,7 @@ public class District {
     @Column(name = "district_name")
     private String name;
 
-    @Column(name = "district_name")
+    @Column(name = "district_code")
     private String code;
 
     @ManyToOne

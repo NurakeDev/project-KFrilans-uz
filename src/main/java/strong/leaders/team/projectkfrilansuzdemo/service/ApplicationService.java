@@ -9,7 +9,7 @@ public interface ApplicationService {
 
     SingleResponse findAll();
 
-    Application findById(Long id);
+    SingleResponse findById(Long id);
 
     SingleResponse update(ApplicationDto applicationDTO, Long id);
 

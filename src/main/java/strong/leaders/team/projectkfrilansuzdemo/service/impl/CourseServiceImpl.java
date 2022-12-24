@@ -7,9 +7,7 @@ import strong.leaders.team.projectkfrilansuzdemo.entity.CourseCategory;
 import strong.leaders.team.projectkfrilansuzdemo.entity.Role;
 import strong.leaders.team.projectkfrilansuzdemo.repository.CourseRepository;
 import strong.leaders.team.projectkfrilansuzdemo.rest.dto.CourseDto;
-import strong.leaders.team.projectkfrilansuzdemo.rest.dto.RoleDto;
 import strong.leaders.team.projectkfrilansuzdemo.rest.response.CourseResponse;
-import strong.leaders.team.projectkfrilansuzdemo.rest.response.RoleResponse;
 import strong.leaders.team.projectkfrilansuzdemo.rest.response.SingleResponse;
 import strong.leaders.team.projectkfrilansuzdemo.service.CourseService;
 
@@ -48,6 +46,7 @@ public class CourseServiceImpl implements CourseService {
                     new CourseResponse(
                             course.getId(),
                             course.getName(),
+                            course.getTopics(),
                             course.getDescription(),
                             course.getCompany(),
                             course.getCategory(),
@@ -67,6 +66,7 @@ public class CourseServiceImpl implements CourseService {
             CourseResponse courseResponse = new CourseResponse(
                     course.getId(),
                     course.getName(),
+                    course.getTopics(),
                     course.getDescription(),
                     course.getCompany(),
                     course.getCategory(),
@@ -97,7 +97,6 @@ public class CourseServiceImpl implements CourseService {
 
             if (dto.getPrice() != null && !entity.getPrice().equals(dto.getPrice()))
                 entity.setPrice(dto.getPrice());
-
 
             repository.save(entity);
             return new SingleResponse(true, "Course successfully updated!");

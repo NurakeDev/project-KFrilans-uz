@@ -1,9 +1,7 @@
 package strong.leaders.team.projectkfrilansuzdemo.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Date;
 
@@ -11,6 +9,8 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class ActiveCourse {
 
     @Id
@@ -18,7 +18,7 @@ public class ActiveCourse {
     public Long id;
 
     @ManyToOne
-    private Course cource;
+    private Course course;
 
     @Column(name = "maximum_student")
     private Integer maxStudent;
